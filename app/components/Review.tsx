@@ -13,34 +13,76 @@ const Review = () => {
   ];
 
   return (
-    <div className="bg-[#FBF7F2] min-h-screen flex justify-center items-center py-12">
-      <div className="flex gap-8 bg-yellow-500 p-8 rounded-lg shadow-lg w-full max-w-4xl">
-        <div className="flex flex-col items-start justify-start w-1/2">
-          <p className="text-lg text-gray-700 italic">
-            {reviews[0].review} {/* Access the review of the first item */}
+    <div className="bg-[#FBF7F2] min-h-screen flex flex-col justify-center items-center py-12 relative">
+    
+      <div className="absolute left-[-10px] top-32 transform ">
+        <Image
+          src="/videoleft.png" 
+          alt="Left Image"
+          width={150}
+          height={150}
+          className="object-contain"
+        />
+      </div>
+
+    
+      <div className="absolute right-0 bottom-4 transform ">
+        <Image
+          src="/videoright.png"
+          alt="Right Image"
+          width={350}
+          height={330}
+          className=""
+        />
+      </div>
+
+      <div className="flex flex-col items-start mb-12 -ml-80">
+        <div className="flex items-center space-x-2">
+          <div className="bg-red-700 h-2 w-3"></div>
+          <p className="text-red-700 font-bold">Crispy Every Bite Test</p>
+        </div>
+        <h1 className="text-4xl text-black font-bold mt-2">
+          What Some Of My Customer Say
+        </h1>
+      </div>
+
+   
+      <div className="relative flex gap-8 bg-yellow-500 p-8 rounded-lg shadow-lg w-full max-w-4xl">
+     
+        <div className="flex flex-col justify-between w-1/2 relative">
+          <div className="absolute left-[-30px] bottom-0 transform -translate-y-1/2">
+            <Image
+              src="/videomiddle.svg" 
+              alt="Vector Image"
+              width={32}
+              height={32}
+              className="object-contain"
+            />
+          </div>
+
+          <p className="text-lg text-gray-700 italic mb-4">
+            {reviews[0].review}
           </p>
-          <div className="flex justify-between">
-            <div className="flex flex-col items-start mt-4">
-              <h3 className="text-xl font-semibold">
-                {reviews[0].name} {/* Access the name of the first item */}
-              </h3>
-              <p className="text-sm text-gray-500">
-                {reviews[0].address} {/* Access the address of the first item */}
-              </p>
+
+          <div className="flex items-center justify-between border-b-2 border-black pb-4 mb-4 ml-4">
+            <div className="flex flex-col items-start">
+              <h3 className="text-xl font-semibold">{reviews[0].name}</h3>
+              <p className="text-sm text-gray-500">{reviews[0].address}</p>
             </div>
 
-            <div className="w-24 h-24 rounded-full overflow-hidden mt-4">
+            <div className="w-24 h-24 rounded-full overflow-hidden">
               <Image
-                src={reviews[0].image} // Use the Image component
-                alt={reviews[0].name} // Add alt text for accessibility
-                width={96} // Set width
-                height={96} // Set height
+                src={reviews[0].image}
+                alt={reviews[0].name}
+                width={96}
+                height={96}
                 className="w-full h-full object-cover"
               />
             </div>
           </div>
         </div>
 
+        
         <div className="w-1/2">
           <div className="w-full h-72">
             <iframe

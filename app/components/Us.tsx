@@ -11,7 +11,14 @@ import {
 
 const Us = () => {
   return (
-    <div className="bg-[url('/footer.jpg')] bg-cover bg-center min-h-screen flex flex-col items-center justify-center text-white">
+    <div
+      className=" bg-cover bg-center min-h-screen flex flex-col items-center justify-center text-white"
+      style={{
+        backgroundImage: "url('/footer.jpg')",
+        backgroundBlendMode: "overlay",
+        backgroundColor: "rgba(0, 0, 0, 0.8)",
+      }}
+    >
       <h1 className="text-center text-4xl font-bold">
         We Ready To Have You The Best Dinning Experience
       </h1>

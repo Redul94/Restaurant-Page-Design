@@ -3,23 +3,40 @@ import Image from "next/image";
 
 const Food = () => {
   return (
-    <div className="bg-[#FBF7F2] pt-8">
-      <div className="text-center">
-        <p className="text-red-700 font-bold">Cripsy Every Bite Test</p>
-      <h1 className="text-4xl text-black font-bold">Popular Food Items</h1>
-      </div>
-      
-      <div className="flex justify-center items-center space-x-6 text-black mt-12">
-        <div className=" flex">
-        {data.map((d, index) => (
-          <div key={index} className="mr-8 bg-white flex flex-col items-center p-8">
-            <Image src={d.imag} alt={d.name} width={120} height={120} />
-            <h2 className="text-lg font-bold mt-2">{d.name}</h2>
-            <p className="">{d.des}</p>
+    <div className="bg-[#FBF7F2] p-16 relative">
+    
+      <div className="max-w-screen-xl mx-auto px-16">
+        <div className="flex flex-col items-start">
+          <div className="flex items-center space-x-2">
+            <div className="bg-red-700 h-2 w-3"></div>
+            <p className="text-red-700 font-bold">Crispy Every Bite Test</p>
           </div>
-        ))}
+          <h1 className="text-4xl text-black font-bold mt-2">
+            Popular Food Items
+          </h1>
         </div>
-        
+
+        <div className="flex justify-start items-start space-x-6 text-black mt-12">
+          {data.map((d, index) => (
+            <div
+              key={index}
+              className="mr-8 bg-white flex flex-col items-center p-8"
+            >
+              <Image src={d.imag} alt={d.name} width={120} height={120} />
+              <h2 className="text-lg font-bold mt-2">{d.name}</h2>
+              <p>{d.des}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="absolute left-0 bottom-16">
+        <Image
+          src="/sidefood.png"
+          alt="Additional Image"
+          width={200}
+          height={200}
+        />
       </div>
     </div>
   );

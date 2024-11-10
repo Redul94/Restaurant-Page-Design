@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState } from "react";
 import { z } from "zod";
 
@@ -11,7 +11,6 @@ const Form = () => {
     message: "",
   });
 
- 
   type ErrorMessages = {
     name?: string;
     email?: string;
@@ -19,7 +18,7 @@ const Form = () => {
     totalPeople?: string;
     message?: string;
   };
-  
+
   const [errors, setErrors] = useState<ErrorMessages>({});
   const schema = z.object({
     name: z.string().nonempty("Name is required"),
@@ -32,11 +31,13 @@ const Form = () => {
     message: z.string().optional(),
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { id, value } = e.target;
-    setFormData({ 
-      ...formData, 
-      [id]: id === "totalPeople" ? parseInt(value) || "" : value 
+    setFormData({
+      ...formData,
+      [id]: id === "totalPeople" ? parseInt(value) || "" : value,
     });
   };
 
@@ -53,6 +54,8 @@ const Form = () => {
       setErrors(zodErrors);
     } else {
       setErrors({});
+      //check submitted data
+      // console.log("Form Data Submitted: ", formData); 
       alert("Form submitted successfully!");
       setFormData({
         name: "",
@@ -65,9 +68,18 @@ const Form = () => {
   };
 
   return (
-    <div className="bg-[url('/form.jpg')] bg-cover bg-center min-h-screen flex items-center justify-center">
+    <div className="bg-[url('/form.jpg')] bg-cover bg-center min-h-screen space-x-8 flex items-center justify-center text-white">
       <div className=" p-8 rounded-lg shadow-lg max-w-md w-full">
-        <h2 className="text-2xl font-bold mb-6  text-red-600">Book Now</h2>
+        <div className="flex items-center space-x-2 mb-4">
+          <div className="bg-red-700 h-4 w-4"></div>
+          <h2 className="text-2xl font-bold  text-red-600">Book Now</h2>
+        </div>
+        <h1 className="text-4xl font-bold mb-2">Book Your Table</h1>
+        <p className="mb-2">
+          Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo
+          molestie vel, ornare non id blandit netus.
+        </p>
+
         <form onSubmit={handleSubmit}>
           <div className="flex gap-4 mb-4">
             <div className="w-1/2">
@@ -79,7 +91,9 @@ const Form = () => {
                 className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-red-500"
                 placeholder="Your Name*"
               />
-              {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
+              {errors.name && (
+                <p className="text-red-500 text-sm">{errors.name}</p>
+              )}
             </div>
             <div className="w-1/2">
               <input
@@ -90,7 +104,9 @@ const Form = () => {
                 className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-red-500"
                 placeholder="Your Email*"
               />
-              {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+              {errors.email && (
+                <p className="text-red-500 text-sm">{errors.email}</p>
+              )}
             </div>
           </div>
 
@@ -103,7 +119,9 @@ const Form = () => {
                 onChange={handleChange}
                 className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-red-500"
               />
-              {errors.reservationDate && <p className="text-red-500 text-sm">{errors.reservationDate}</p>}
+              {errors.reservationDate && (
+                <p className="text-red-500 text-sm">{errors.reservationDate}</p>
+              )}
             </div>
             <div className="w-1/2">
               <input
@@ -114,7 +132,9 @@ const Form = () => {
                 className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-red-500"
                 placeholder="Number of People*"
               />
-              {errors.totalPeople && <p className="text-red-500 text-sm">{errors.totalPeople}</p>}
+              {errors.totalPeople && (
+                <p className="text-red-500 text-sm">{errors.totalPeople}</p>
+              )}
             </div>
           </div>
 
@@ -136,6 +156,7 @@ const Form = () => {
           </button>
         </form>
       </div>
+      <div className="hidden sm:block p-8 rounded-lg shadow-lg max-w-md w-full"></div>
     </div>
   );
 };
