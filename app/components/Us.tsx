@@ -12,7 +12,7 @@ import {
 const Us = () => {
   return (
     <div
-      className=" bg-cover bg-center min-h-screen flex flex-col items-center justify-center text-white"
+      className=" bg-cover bg-center min-h-screen flex flex-col items-center justify-center text-white "
       style={{
         backgroundImage: "url('/footer.jpg')",
         backgroundBlendMode: "overlay",
@@ -23,7 +23,7 @@ const Us = () => {
         We Ready To Have You The Best Dinning Experience
       </h1>
       <div className="flex justify-center items-center space-x-6  mt-12">
-        <div className="flex ">
+        <div className="flex flex-col md:flex-row">
           {data.map((d, index) => (
             <div key={index} className="mr-8 flex flex-col items-center p-8">
               <div className="text-4xl text-yellow-500 mb-4">{d.icon}</div>

@@ -13,11 +13,10 @@ const Review = () => {
   ];
 
   return (
-    <div className="bg-[#FBF7F2] min-h-screen flex flex-col justify-center items-center py-12 relative">
-    
-      <div className="absolute left-[-10px] top-32 transform ">
+    <div className="bg-[#FBF7F2] min-h-screen flex flex-col justify-center items-center py-12 relative pt-4 pl-4 pr-4">
+      <div className="absolute left-[-10px] top-32 transform hidden lg:block">
         <Image
-          src="/videoleft.png" 
+          src="/videoleft.png"
           alt="Left Image"
           width={150}
           height={150}
@@ -25,8 +24,7 @@ const Review = () => {
         />
       </div>
 
-    
-      <div className="absolute right-0 bottom-4 transform ">
+      <div className="absolute right-0 bottom-4 transform hidden lg:block ">
         <Image
           src="/videoright.png"
           alt="Right Image"
@@ -36,23 +34,21 @@ const Review = () => {
         />
       </div>
 
-      <div className="flex flex-col items-start mb-12 -ml-80">
+      <div className="flex flex-col items-start mb-12 px-4 sm:px-0">
         <div className="flex items-center space-x-2">
           <div className="bg-red-700 h-2 w-3"></div>
           <p className="text-red-700 font-bold">Crispy Every Bite Test</p>
         </div>
-        <h1 className="text-4xl text-black font-bold mt-2">
-          What Some Of My Customer Say
+        <h1 className="text-4xl text-black font-bold mt-2 text-center sm:text-left">
+          What Some Of My Customers Say
         </h1>
       </div>
 
-   
-      <div className="relative flex gap-8 bg-yellow-500 p-8 rounded-lg shadow-lg w-full max-w-4xl">
-     
-        <div className="flex flex-col justify-between w-1/2 relative">
+      <div className="relative flex flex-col md:flex-row gap-8 bg-yellow-500 p-8 rounded-lg shadow-lg w-full max-w-4xl">
+        <div className="flex flex-col justify-between w-full md:w-1/2 order-2 md:order-1 relative">
           <div className="absolute left-[-30px] bottom-0 transform -translate-y-1/2">
             <Image
-              src="/videomiddle.svg" 
+              src="/videomiddle.svg"
               alt="Vector Image"
               width={32}
               height={32}
@@ -82,8 +78,7 @@ const Review = () => {
           </div>
         </div>
 
-        
-        <div className="w-1/2">
+        <div className="w-full md:w-1/2 order-1 md:order-2">
           <div className="w-full h-72">
             <iframe
               width="100%"

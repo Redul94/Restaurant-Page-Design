@@ -4,7 +4,6 @@ import Image from "next/image";
 const Food = () => {
   return (
     <div className="bg-[#FBF7F2] p-16 relative">
-    
       <div className="max-w-screen-xl mx-auto px-16">
         <div className="flex flex-col items-start">
           <div className="flex items-center space-x-2">
@@ -16,11 +15,11 @@ const Food = () => {
           </h1>
         </div>
 
-        <div className="flex justify-start items-start space-x-6 text-black mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-black mt-12">
           {data.map((d, index) => (
             <div
               key={index}
-              className="mr-8 bg-white flex flex-col items-center p-8"
+              className="bg-white flex flex-col items-center p-8 rounded-lg shadow-md"
             >
               <Image src={d.imag} alt={d.name} width={120} height={120} />
               <h2 className="text-lg font-bold mt-2">{d.name}</h2>
@@ -30,7 +29,7 @@ const Food = () => {
         </div>
       </div>
 
-      <div className="absolute left-0 bottom-16">
+      <div className="absolute left-0 bottom-16 hidden lg:block">
         <Image
           src="/sidefood.png"
           alt="Additional Image"

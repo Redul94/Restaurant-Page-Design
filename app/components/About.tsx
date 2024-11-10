@@ -47,19 +47,20 @@ const content: Record<ButtonKey, { title: string; text: JSX.Element }> = {
     ),
   },
 };
+
 const features = [
   {
-    icon: <CiDeliveryTruck className="h-12 w-12 rounded-full  p-3 bg-white" />,
+    icon: <CiDeliveryTruck className="h-12 w-12 rounded-full p-3 bg-white" />,
     title: "Fast Delivery",
     description: "Within 30 minutes",
   },
   {
-    icon: <GiPodiumWinner className="h-12 w-12 rounded-full  p-3 bg-white" />,
+    icon: <GiPodiumWinner className="h-12 w-12 rounded-full p-3 bg-white" />,
     title: "Absolute Dining",
     description: "Best Buffet Restaurant",
   },
   {
-    icon: <FiShoppingBag className="h-12 w-12 rounded-full  p-3 bg-white" />,
+    icon: <FiShoppingBag className="h-12 w-12 rounded-full p-3 bg-white" />,
     title: "Pickup Delivery",
     description: "Grab your food order",
   },
@@ -71,12 +72,13 @@ const About = () => {
   const navButtons: ButtonKey[] = ["About", "Experience", "Contact"];
 
   return (
-    <div className="relative bg-slate-100 text-black">
-      <div className="flex items-center justify-around">
-        <div className="mt-16">
+    <div className="relative bg-slate-100 text-black p-8">
+      <div className="flex flex-col md:flex-row items-center justify-around gap-8">
+        <div className="mt-16 md:w-1/2">
           <Image src={"/aboutimage.png"} alt={""} width={617} height={460} />
         </div>
-        <div className="mt-16">
+
+        <div className="mt-16 md:w-1/2">
           <div className="flex space-x-4 border-b-2 border-red-500">
             {navButtons.map((button, index) => (
               <button
@@ -92,16 +94,19 @@ const About = () => {
               </button>
             ))}
           </div>
+
           <h1
             className="font-bold text-4xl mt-4"
             dangerouslySetInnerHTML={{
               __html: content[activeButton].title,
             }}
           />
+
           <p className="mt-4">{content[activeButton].text}</p>
-          <div className="mt-4 flex items-center">
+
+          <div className="mt-4 flex items-center justify-around md:justify-start">
             <button className="btn bg-yellow-500 text-black">About More</button>
-            <div className="flex items-center ml-8">
+            <div className="flex items-center mt-4 md:ml-8 md:mt-0">
               <FaPhoneVolume className="text-black h-5 w-5" />
               <p className="ml-3">01722222222</p>
             </div>
@@ -109,7 +114,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="mt-8 flex items-center justify-evenly gap-4 pb-16">
+      <div className="mt-8 flex flex-col md:flex-row items-center justify-evenly gap-4 pb-16">
         {features.map((feature, index) => (
           <div key={index} className="flex items-center space-x-2">
             {feature.icon}
@@ -121,10 +126,9 @@ const About = () => {
         ))}
       </div>
 
-    
-      <div className="absolute bottom-32 right-4">
+      <div className="absolute bottom-32 right-4 hidden lg:block">
         <Image
-          src="/aboutimage2.png" 
+          src="/aboutimage2.png"
           alt="Today Offer"
           width={80}
           height={80}
