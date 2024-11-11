@@ -24,3 +24,14 @@ body {
   padding: auto;
   
 }
+.carousel-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.carousel-item {
+  width: 100% !important; /* Force each item to take full width */
+  max-width: 320px; /* Optional, you can adjust the max width of each item */
+  margin: 0 auto; /* Center the items */
+}
