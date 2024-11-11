@@ -1,3 +1,22 @@
+
+# Project Title
+
+This is a resturant web page Frontend design only.
+
+
+# Project Description
+
+- I use next js framework for this designing this web
+
+- Functionality added to form section
+
+- Try to install react swiper and slick to use slider but got unknown error so i try to use react useState to slide the food item
+
+## Live
+
+https://restaurant-page-design.vercel.app/
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
